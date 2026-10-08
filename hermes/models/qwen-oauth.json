@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "qwen-oauth",
+  "name": "Qwen Portal",
+  "version": "1.0.0",
+  "homepage": "https://chat.qwen.ai/",
+  "description": "Qwen Portal (qwen-code) via OAuth — Qwen coding models, no API key required.",
+  "docs": "https://github.com/QwenLM/qwen-code",
+  "apiBase": "https://portal.qwen.ai/v1",
+  "envKey": "QWEN_API_KEY",
+  "models": [
+    {
+      "name": "qwen3-coder-plus",
+      "label": "Qwen3 Coder Plus",
+      "context": 1000000,
+      "maxOutput": 65536,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ],
+      "description": "Agentic coding model."
+    },
+    {
+      "name": "qwen3-coder-flash",
+      "label": "Qwen3 Coder Flash",
+      "context": 1000000,
+      "maxOutput": 65536,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    }
+  ]
+}

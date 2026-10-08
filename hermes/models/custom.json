@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "custom",
+  "name": "Custom / Local",
+  "version": "1.0.0",
+  "homepage": "https://ollama.com/",
+  "description": "Any OpenAI-compatible endpoint registered as 'custom', including local Ollama, vLLM and llama.cpp servers. Base URL and models are user-configured.",
+  "docs": "https://github.com/ollama/ollama/blob/main/docs/openai.md",
+  "models": [
+    {
+      "name": "llama3.1",
+      "label": "Llama 3.1 (local)",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming"
+      ],
+      "description": "Representative local model; actual models depend on the user's endpoint."
+    }
+  ]
+}

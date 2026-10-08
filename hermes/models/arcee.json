@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "arcee",
+  "name": "Arcee AI",
+  "version": "1.0.0",
+  "homepage": "https://www.arcee.ai/",
+  "description": "Arcee AI — small, specialized models plus an automatic model router.",
+  "docs": "https://docs.arcee.ai/",
+  "apiBase": "https://api.arcee.ai/api/v1",
+  "envKey": "ARCEEAI_API_KEY",
+  "models": [
+    {
+      "name": "auto",
+      "label": "Arcee Conductor (auto)",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ],
+      "description": "Router that picks the best Arcee model per request."
+    },
+    {
+      "name": "virtuoso-large",
+      "label": "Virtuoso Large",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    },
+    {
+      "name": "coder-large",
+      "label": "Coder Large",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    }
+  ]
+}

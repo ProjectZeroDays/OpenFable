@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "kilocode",
+  "name": "Kilo Code",
+  "version": "1.0.0",
+  "homepage": "https://kilo.ai/",
+  "description": "Kilo Code — an AI coding gateway routing to many upstream models with slash-form IDs.",
+  "docs": "https://kilocode.ai/docs",
+  "apiBase": "https://api.kilo.ai/api/gateway",
+  "envKey": "KILOCODE_API_KEY",
+  "models": [
+    {
+      "name": "anthropic/claude-3.5-sonnet",
+      "label": "Claude 3.5 Sonnet",
+      "context": 200000,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ]
+    },
+    {
+      "name": "google/gemini-2.0-flash",
+      "label": "Gemini 2.0 Flash",
+      "context": 1048576,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ]
+    }
+  ]
+}

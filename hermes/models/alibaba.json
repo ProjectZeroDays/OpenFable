@@ -1,0 +1,112 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "alibaba",
+  "name": "Alibaba Cloud (DashScope)",
+  "version": "1.0.0",
+  "homepage": "https://www.alibabacloud.com/product/modelstudio",
+  "description": "Qwen models via Alibaba Cloud Model Studio (DashScope), OpenAI-compatible endpoint.",
+  "docs": "https://www.alibabacloud.com/help/en/model-studio/",
+  "apiBase": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+  "envKey": "DASHSCOPE_API_KEY",
+  "models": [
+    {
+      "name": "qwen-max",
+      "label": "Qwen Max",
+      "context": 32768,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ],
+      "description": "Best-quality Qwen model for complex tasks."
+    },
+    {
+      "name": "qwen-plus",
+      "label": "Qwen Plus",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    },
+    {
+      "name": "qwen-turbo",
+      "label": "Qwen Turbo",
+      "context": 1000000,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    },
+    {
+      "name": "qwen3-coder-plus",
+      "label": "Qwen3 Coder Plus",
+      "context": 1000000,
+      "maxOutput": 65536,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ],
+      "description": "Agentic coding model."
+    },
+    {
+      "name": "qwen-vl-max",
+      "label": "Qwen VL Max",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ]
+    }
+  ]
+}

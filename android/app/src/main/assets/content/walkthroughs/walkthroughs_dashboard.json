@@ -1,0 +1,12 @@
+{
+  "walkthroughs": [
+    {
+      "route": "dashboard",
+      "steps": [
+        {"id": "w1", "title": "Start the C2 server", "body": "Flip the server toggle (or let autostart do it). This walkthrough advances the moment the server is actually listening — not on a Next button.", "advanceOn": "c2.server.started"},
+        {"id": "w2", "title": "Launch an Overlord cycle", "body": "Press AUTO RUN. The card below turns into a live job card with the cycle's log tail. It advances when a cycle really starts.", "advanceOn": "overlord.started"},
+        {"id": "w3", "title": "Arrange your grid", "body": "Unlock the dashboard, drag a card where you want it, then lock. Advancing requires the real toggle — the lock chip fires it.", "advanceOn": "widget.lock.toggled"}
+      ]
+    }
+  ]
+}

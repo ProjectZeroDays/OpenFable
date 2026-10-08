@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "bedrock",
+  "name": "AWS Bedrock",
+  "version": "1.0.0",
+  "homepage": "https://aws.amazon.com/bedrock/",
+  "description": "Amazon Bedrock — managed access to foundation models via the AWS SDK (no REST API key).",
+  "docs": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html",
+  "apiBase": "https://bedrock-runtime.us-east-1.amazonaws.com",
+  "models": [
+    {
+      "name": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+      "label": "Claude 3.5 Sonnet (Bedrock)",
+      "context": 200000,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ]
+    },
+    {
+      "name": "meta.llama3-3-70b-instruct-v1:0",
+      "label": "Llama 3.3 70B (Bedrock)",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming"
+      ]
+    },
+    {
+      "name": "amazon.nova-pro-v1:0",
+      "label": "Amazon Nova Pro",
+      "context": 300000,
+      "maxOutput": 5120,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ]
+    }
+  ]
+}

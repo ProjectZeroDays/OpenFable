@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "ollama-cloud",
+  "name": "Ollama Cloud",
+  "version": "1.0.0",
+  "homepage": "https://ollama.com/cloud",
+  "description": "Ollama Cloud — hosted large open-weight models via an OpenAI-compatible endpoint.",
+  "docs": "https://docs.ollama.com/cloud",
+  "apiBase": "https://ollama.com/v1",
+  "envKey": "OLLAMA_API_KEY",
+  "models": [
+    {
+      "name": "gpt-oss:120b",
+      "label": "gpt-oss 120B",
+      "context": 131072,
+      "maxOutput": 32768,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "reasoning",
+        "streaming"
+      ]
+    },
+    {
+      "name": "deepseek-v3.1:671b",
+      "label": "DeepSeek V3.1 671B",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "reasoning",
+        "streaming"
+      ]
+    },
+    {
+      "name": "qwen3:235b",
+      "label": "Qwen3 235B",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    }
+  ]
+}

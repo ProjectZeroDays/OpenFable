@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "minimax-cn",
+  "name": "MiniMax (China)",
+  "version": "1.0.0",
+  "homepage": "https://www.minimaxi.com/",
+  "description": "MiniMax models via the Anthropic-compatible endpoint (China).",
+  "docs": "https://platform.minimaxi.com/document",
+  "apiBase": "https://api.minimaxi.com/anthropic",
+  "envKey": "MINIMAX_CN_API_KEY",
+  "models": [
+    {
+      "name": "MiniMax-M2",
+      "label": "MiniMax M2",
+      "context": 204800,
+      "maxOutput": 16384,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ],
+      "description": "Agent/coding-focused MoE model."
+    },
+    {
+      "name": "MiniMax-M1",
+      "label": "MiniMax M1",
+      "context": 1000000,
+      "maxOutput": 40960,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "reasoning",
+        "streaming"
+      ],
+      "description": "Long-context reasoning model."
+    },
+    {
+      "name": "MiniMax-Text-01",
+      "label": "MiniMax Text 01",
+      "context": 1000192,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1",
+  "type": "mcp",
+  "id": "sequential-thinking",
+  "name": "Sequential Thinking",
+  "version": "1.1.0",
+  "description": "Structured step-by-step reasoning scratchpad for hard problems.",
+  "author": {
+    "name": "Model Context Protocol",
+    "url": "https://github.com/modelcontextprotocol/servers"
+  },
+  "license": "MIT",
+  "source": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+  "tags": [
+    "reasoning",
+    "planning"
+  ],
+  "icon": "icon.svg",
+  "compatibility": {
+    "hermes": ">=0.3.0",
+    "desktop": ">=0.6.0"
+  },
+  "transport": "stdio",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@modelcontextprotocol/server-sequential-thinking@2025.12.18"
+  ]
+}

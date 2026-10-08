@@ -1,0 +1,35 @@
+{
+  "provider_id": "hf-gemma-4-e2b-ultra",
+  "provider_name": "HuggingFace Gemma-4-E2B Ultra Endpoint",
+  "engine": "llama.cpp-remote",
+  "base_url": "https://tqaxfn2i76y77uvv.eu-west-1.aws.endpoints.huggingface.cloud",
+  "auth": {
+    "scheme": "Bearer",
+    "env_var": "HF_GEMMA_ENDPOINT_TOKEN"
+  },
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "routes": {
+    "chat_completions": "/v1/chat/completions",
+    "text_completions": "/v1/completions"
+  },
+  "model_payload_template": {
+    "prompt": "{prompt}",
+    "temperature": "{temperature}",
+    "max_tokens": "{max_tokens}",
+    "stream": true
+  },
+  "served_model": "/repository/gemma-4-E2B-it-ultra-uncensored-heretic-Q8_0.gguf",
+  "validated": "2026-09-10",
+  "validation": {
+    "chat_completions_probe": "Say READY and nothing else. -> READY",
+    "status": "active"
+  },
+  "ui_surfaces": [
+    "MimoCode Desktop",
+    "JCode",
+    "FreeAI WebUI",
+    "Unified Router (vLLM + llama.cpp hybrid)"
+  ]
+}

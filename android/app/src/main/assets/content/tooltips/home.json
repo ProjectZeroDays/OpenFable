@@ -1,0 +1,59 @@
+{
+  "version": 3,
+  "tooltips": {
+    "home.root.status": {
+      "title": "Root Status",
+      "howTo": "Shows whether this device is rooted. Root unlocks the memory-analysis, packet capture, evil-AP and IMSI modules. Tap to open the root pre-flight with a one-tap root re-request if access was revoked.",
+      "troubleshooting": [
+        { "symptom": "Shows amber 'degraded'", "cause": "su binary present but a magisk deny-list is blocking us", "fix": "Tap the widget → Grant Root. If you use Magisk hide/Zygisk deny-list, exclude Quantum CLI." },
+        { "symptom": "Shows grey", "cause": "Device not rooted", "fix": "Root-less modules remain fully usable. Modules requiring root show the root badge in their status footer." }
+      ],
+      "relatedTooltips": ["home.model.status", "diag.feature.matrix"]
+    },
+    "home.terminal.launcher": {
+      "title": "Terminal",
+      "howTo": "Embedded terminal console with full command history and SAF-backed log export. Use View to open the whole session log, Download to save it via the system file picker, and Clear to start fresh. Streams from any module's 'open in terminal' land here.",
+      "troubleshooting": [
+        { "symptom": "Screen flashes, keys invisible", "cause": "Terminal theme mismatch", "fix": "Settings → General → Terminal theme → Quantum Mono." },
+        { "symptom": "adb:// profile won't connect", "cause": "Target requires pairing (Android 11+)", "fix": "Use Devices → Wireless scan + connect (the RSA prompt appears on the target)." }
+      ],
+      "relatedTooltips": ["exploit.adb.hunter", "home.net.speed"]
+    },
+    "home.net.speed": {
+      "title": "Network Speed",
+      "howTo": "Live sampled upload/download with a 60-second sparkline (TrafficStats deltas). History persists in TelemetrySamples for the charts dashboard.",
+      "troubleshooting": [
+        { "symptom": "Zero while online", "cause": "VPN interface accounting differs on some ROMs", "fix": "Toggle Settings → Network → Speed sample source: auto → wifi/cellular explicit." }
+      ]
+    },
+    "home.model.status": {
+      "title": "Local AI Model",
+      "howTo": "Status of the on-device MediaPipe model used when the provider chain falls back to local. Shows model name, size, and download progress. Tap for the Machine Learning dashboard: download (resumable), verify, unload, delete, and sampling controls.",
+      "troubleshooting": [
+        { "symptom": "Download fails at ~40%", "cause": "Interrupted network or full storage", "fix": "Tap Retry — downloads resume; completed bytes are never redownloaded. Check free space in the ML dashboard." },
+        { "symptom": "Verify failed after download", "cause": "Corrupt .task file (truncated transfer)", "fix": "Delete the model in the ML dashboard and re-download; if it recurs, switch the mirror in Settings → AI → Model mirrors." }
+      ],
+      "relatedTooltips": ["ai.provider.grid", "home.terminal.launcher"]
+    },
+    "home.provider.grid": {
+      "title": "Provider Status",
+      "howTo": "Health grid for every configured AI provider (Abliteratus, OpenRouter, Venice, Agnes, OpenCode, local). Green = healthy ping, amber = degraded, red = unreachable, grey = not configured. Tap a provider for latency detail; long-press to set it first in the failover chain.",
+      "troubleshooting": [
+        { "symptom": "Provider red but internet fine", "cause": "Missing or expired API key", "fix": "Integrations dashboard → the provider → update key; a health re-ping runs immediately." },
+        { "symptom": "All providers amber", "cause": "DoH resolver fallback engaged (network degraded)", "fix": "Check Home → RDNS widget; the banner clears when the primary resolver returns." }
+      ]
+    },
+    "home.dnscrypt.status": {
+      "title": "DNSCrypt & Resolvers",
+      "howTo": "Shows the dnscrypt-proxy process state and active resolver list parsed from its TOML (the same config quantum.anon generates). Tap to view resolver latency ranking and switch primary.",
+      "troubleshooting": [
+        { "symptom": "Process green, but DoH widget amber", "cause": "Different resolver paths", "fix": "Align resolver under Settings → Network → DoH endpoint = DNSCrypt's active resolver." }
+      ]
+    },
+    "home.map.preview": {
+      "title": "Beacon Map Preview",
+      "howTo": "Mini world map pinned to the full map dashboard. Green pins = live beacons; tap any pin to open the target drawer.",
+      "relatedTooltips": ["rat.map.full"]
+    }
+  }
+}

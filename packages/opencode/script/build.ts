@@ -232,7 +232,7 @@ for (const item of targets) {
       autoloadTsconfig: true,
       autoloadPackageJson: true,
       target: name.replace(BINARY_PREFIX, "bun") as any,
-      outfile: `dist/${name}/bin/openfable`,
+      outfile: `dist/${name}/bin/${item.os === "win32" ? "openfable.exe" : "openfable"}`,
       execArgv: [`--user-agent=openfable/${Script.version}`, "--use-system-ca", "--"],
       windows: {},
     },
@@ -250,7 +250,7 @@ for (const item of targets) {
 
   // Smoke test: only run if binary is for current platform
   if (item.os === process.platform && item.arch === process.arch && !item.abi) {
-    const binaryPath = `dist/${name}/bin/openfable`
+    const binaryPath = `dist/${name}/bin/${item.os === "win32" ? "openfable.exe" : "openfable"}`
     console.log(`Running smoke test: ${binaryPath} --version`)
     try {
       const versionOutput = await $`${binaryPath} --version`.text()

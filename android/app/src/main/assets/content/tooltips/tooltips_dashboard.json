@@ -1,0 +1,11 @@
+{
+  "tooltips": [
+    {"id": "widget.lock", "title": "Arrange", "body": "Toggle the dashboard layout lock. While unlocked, long-press any card and drag it to reposition; lock when the arrangement suits you. Your layout persists per screen.", "anchor": "widget.grid"},
+    {"id": "widget.unlock_hint", "title": "Edit mode", "body": "Long-press a card and drag to arrange — lock when done.", "anchor": "widget.grid"},
+    {"id": "overlord.run", "title": "Overlord cycle", "body": "One autonomous recon-act-report cycle at the configured interval. Camera-first: the CAMWAR sweep always runs before the decision loop.", "anchor": "dashboard.autorun"},
+    {"id": "killswitch.arm", "title": "Kill switch", "body": "Queues a wipe task on every known implant and halts autonomous actions. Queued wipes cannot be recalled — this is the app's only irreversible control.", "anchor": "dashboard.killswitch"},
+    {"id": "scan.net", "title": "Scan net", "body": "Runs the network recon module against the current scope (local /24 by default, or the CIDR set in Settings).", "anchor": "dashboard.quickops"},
+    {"id": "ai.mode", "title": "AI mode", "body": "online: remote API. local: on-device model. deterministic: QBrain plans everything offline — no network, fully reproducible.", "anchor": "dashboard.ai"},
+    {"id": "job.card", "title": "Job card", "body": "Every long-running operation renders as a job card: phase, progress, a live log tail, and Stop when cancelable. Same shape everywhere.", "anchor": "dashboard.jobs"}
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "tooltips": {
+    "settings.ai.mode": {
+      "title": "AI Mode",
+      "howTo": "online = real provider APIs; local = on-device MediaPipe model; deterministic = offline rules engine (no ML, always works, no network). Chat and AI features fall back to deterministic when a provider or model is unavailable."
+    },
+    "settings.ai.provider": {
+      "title": "AI Provider",
+      "howTo": "Which configured provider preset the online mode calls first. Each preset carries its own base URL and model id; per-provider keys are stored in the Android Keystore-backed preferences.",
+      "troubleshooting": [
+        { "symptom": "Calls fail with 401", "cause": "Missing or expired key for this provider", "fix": "Settings → AI → API key for the selected provider; the next call re-authenticates." }
+      ]
+    },
+    "settings.ai.api_key": {
+      "title": "API Key",
+      "howTo": "Secret for the active provider. Stored encrypted (EncryptedSharedPreferences); never written to logs or exports. Leave blank to use the per-provider key slot."
+    },
+    "settings.ml.temperature": {
+      "title": "Sampling Temperature",
+      "howTo": "0.0 = deterministic/conservative replies, 2.0 = maximally creative. Applies to the on-device engine after Apply & Reload (online providers use their server-side defaults)."
+    },
+    "settings.ml.top_k": {
+      "title": "Top-K Sampling",
+      "howTo": "Limits sampling to the K most likely tokens. Lower = safer/more predictable text; higher = wider variety. Applied on engine reload."
+    },
+    "settings.ml.max_tokens": {
+      "title": "Max Output Tokens",
+      "howTo": "Hard cap on generated tokens per reply for the local engine. Larger caps take longer and use more memory; 1024 is the balanced default."
+    },
+    "settings.ml.telemetry": {
+      "title": "ML Telemetry",
+      "howTo": "Records latency/throughput samples around real inference calls into a session-only ring buffer shown on the ML dashboard. Nothing leaves the device; turning it off stops recording new samples."
+    },
+    "settings.general.autostart": {
+      "title": "Autostart",
+      "howTo": "Start background services (overlord polling, healing loops) automatically on app launch. Off = everything starts only when you tap Start."
+    },
+    "settings.overlord.aggression": {
+      "title": "Overlord Aggression",
+      "howTo": "balanced = polite timing between autonomous cycles; aggressive = shorter jitter, more frequent actions; patient = long gaps for stealth. Cycle interval also honours the per-cycle seconds setting."
+    },
+    "settings.privacy.clipboard_clear_sec": {
+      "title": "Clipboard Clear TTL",
+      "howTo": "Seconds after a copy before the clipboard is wiped (0 = never). Protects secrets copied into the clipboard from the loot/vault screens."
+    },
+    "settings.updates.hotfix_channel": {
+      "title": "Content Hot-Fix Channel",
+      "howTo": "Base URL of a signed content channel for tooltip/kill-switch hot-fixes. Blank = disabled and only the shipped assets are used. Content from the channel is signature-checked before it replaces anything."
+    },
+    "settings.c2.mode": {
+      "title": "C2 Destination",
+      "howTo": "Self-Host runs the embedded NanoHTTPD C2 server on-device and serves QUANTUMDASH at /dash. Remote-Connect points the native dashboard at an externally-hosted C2 endpoint; the web panel at <host>/dash is opened in a browser alongside the native controls."
+    },
+    "settings.c2.remote_host": {
+      "title": "Remote C2 Host",
+      "howTo": "Base URL of the externally-hosted C2 server (e.g. http://10.0.0.5:8443). The native dashboard controls work regardless of mode; only dashboard indicators and the web-panel link target this host."
+    },
+    "settings.c2.destination_gate_shown": {
+      "title": "C2 Destination Gate Shown",
+      "howTo": "Tracks whether the first-launch C2 destination gate has been dismissed. When false, the gate splash will appear on next launch; when true it is skipped so the dashboard opens directly."
+    }
+  }
+}

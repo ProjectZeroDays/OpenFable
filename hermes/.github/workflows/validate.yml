@@ -1,0 +1,24 @@
+name: Validate
+
+# Validate every registry entry on pull requests — the pre-merge safety net.
+# Branch pushes are not validated here; pushes to main run skill parsing via the
+# Build Index workflow. Fails the check on any ERROR; warnings are allowed.
+on:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate registry
+        run: python scripts/validate.py

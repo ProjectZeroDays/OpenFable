@@ -1,0 +1,388 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "google",
+  "name": "Google",
+  "icon": "icons/google.svg",
+  "version": "1.1.0",
+  "homepage": "https://ai.google.dev",
+  "description": "The Gemini family of multimodal models from Google.",
+  "docs": "https://ai.google.dev/gemini-api/docs/models",
+  "apiBase": "https://generativelanguage.googleapis.com/v1beta",
+  "envKey": "GEMINI_API_KEY",
+  "models": [
+    {
+      "name": "gemini-2.5-pro",
+      "label": "Gemini 2.5 Pro",
+      "description": "Most capable Gemini model with built-in thinking.",
+      "context": 1048576,
+      "maxOutput": 65536,
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "audio",
+          "video",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "reasoning",
+        "streaming",
+        "structured_outputs",
+        "code_execution"
+      ]
+    },
+    {
+      "name": "gemini-2.5-flash",
+      "label": "Gemini 2.5 Flash",
+      "description": "Fast, cost-efficient model with thinking.",
+      "context": 1048576,
+      "maxOutput": 65536,
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "audio",
+          "video",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "reasoning",
+        "streaming",
+        "structured_outputs",
+        "code_execution"
+      ]
+    },
+    {
+      "name": "gemini-2.0-flash",
+      "label": "Gemini 2.0 Flash",
+      "context": 1048576,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "audio",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming",
+        "structured_outputs"
+      ]
+    },
+    {
+      "name": "gemini-1.5-pro",
+      "label": "Gemini 1.5 Pro",
+      "description": "Long-context model with up to a 2M token window.",
+      "context": 2097152,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "audio",
+          "video",
+          "pdf"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ]
+    },
+    {
+      "name": "gemini-1.5-flash",
+      "label": "Gemini 1.5 Flash",
+      "context": 1048576,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "audio",
+          "video"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ]
+    },
+    {
+      "name": "gemini-2.5-flash-lite",
+      "label": "Gemini 2.5 Flash Lite",
+      "description": "Gemini 2.5 Flash Lite",
+      "context": 1048576,
+      "maxOutput": 65536,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "prompt_caching",
+        "streaming"
+      ],
+      "pricing": {
+        "input": 0.1,
+        "output": 0.4,
+        "currency": "USD",
+        "unit": "per_1m_tokens"
+      }
+    },
+    {
+      "name": "gemini-3-flash-preview",
+      "label": "Gemini 3 Flash Preview",
+      "description": "Gemini 3 Flash Preview",
+      "context": 200000,
+      "maxOutput": 65536,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "prompt_caching",
+        "streaming"
+      ],
+      "pricing": {
+        "input": 0.5,
+        "output": 3.0,
+        "currency": "USD",
+        "unit": "per_1m_tokens"
+      }
+    },
+    {
+      "name": "gemini-2.0-flash-lite",
+      "label": "Gemini 2.0 Flash Lite",
+      "description": "Gemini 2.0 Flash Lite",
+      "context": 1048576,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "prompt_caching",
+        "streaming"
+      ],
+      "pricing": {
+        "input": 0.075,
+        "output": 0.3,
+        "currency": "USD",
+        "unit": "per_1m_tokens"
+      }
+    },
+    {
+      "name": "gemini-2.5-flash-image",
+      "label": "Gemini 2.5 Flash Image",
+      "description": "Gemini 2.5 Flash Image",
+      "context": 131072,
+      "maxOutput": 131072,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "prompt_caching",
+        "streaming"
+      ],
+      "pricing": {
+        "input": 0.3,
+        "output": 2.5,
+        "currency": "USD",
+        "unit": "per_1m_tokens"
+      }
+    },
+    {
+      "name": "gemini-3-pro-image-preview",
+      "label": "Gemini 3 Pro Image Preview",
+      "description": "Gemini 3 Pro Image Preview",
+      "context": 131072,
+      "maxOutput": 131072,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "prompt_caching",
+        "streaming"
+      ],
+      "pricing": {
+        "input": 2.0,
+        "output": 12.0,
+        "currency": "USD",
+        "unit": "per_1m_tokens"
+      }
+    },
+    {
+      "name": "gemini-3.1-pro-preview",
+      "label": "Gemini 3.1 Pro Preview",
+      "description": "Gemini 3.1 Pro Preview",
+      "context": 1000000,
+      "maxOutput": 64000,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "prompt_caching",
+        "streaming"
+      ],
+      "pricing": {
+        "input": 2.0,
+        "output": 12.0,
+        "currency": "USD",
+        "unit": "per_1m_tokens"
+      }
+    },
+    {
+      "name": "gemini-3.1-flash-image-preview",
+      "label": "Gemini 3.1 Flash Image Preview",
+      "description": "Gemini 3.1 Flash Image Preview",
+      "context": 131072,
+      "maxOutput": 131072,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "prompt_caching",
+        "streaming"
+      ],
+      "pricing": {
+        "input": 0.5,
+        "output": 3.0,
+        "currency": "USD",
+        "unit": "per_1m_tokens"
+      }
+    },
+    {
+      "name": "gemini-3.5-flash",
+      "label": "Gemini 3.5 Flash",
+      "description": "Gemini 3.5 Flash",
+      "context": 1048576,
+      "maxOutput": 65536,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "prompt_caching",
+        "streaming"
+      ],
+      "pricing": {
+        "input": 1.5,
+        "output": 9.0,
+        "currency": "USD",
+        "unit": "per_1m_tokens"
+      }
+    },
+    {
+      "name": "gemini-3.1-flash-lite",
+      "label": "Gemini 3.1 Flash Lite",
+      "description": "Gemini 3.1 Flash Lite",
+      "context": 1048576,
+      "maxOutput": 65536,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "prompt_caching",
+        "streaming"
+      ],
+      "pricing": {
+        "input": 0.25,
+        "output": 1.5,
+        "currency": "USD",
+        "unit": "per_1m_tokens"
+      }
+    },
+    {
+      "name": "gemini-3.1-flash-image",
+      "label": "Gemini 3.1 Flash Image",
+      "description": "Gemini 3.1 Flash Image",
+      "context": 131072,
+      "maxOutput": 131072,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "prompt_caching",
+        "streaming"
+      ],
+      "pricing": {
+        "input": 0.5,
+        "output": 3.0,
+        "currency": "USD",
+        "unit": "per_1m_tokens"
+      }
+    }
+  ]
+}

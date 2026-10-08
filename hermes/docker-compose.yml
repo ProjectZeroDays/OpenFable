@@ -1,0 +1,39 @@
+# Hermes Registry — pasteable deployment. No build: pulls the prebuilt image
+# published to GHCR by CI on pushes to the `release` branch.
+#
+#   1. cp .env.example .env   # set POSTGRES_PASSWORD
+#   2. docker compose up -d    # → http://localhost:3000
+#
+# The app image migrates + seeds Postgres on startup (idempotent; download
+# counters are preserved), then serves.
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-hermes}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hermes}
+      POSTGRES_DB: ${POSTGRES_DB:-hermes}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-hermes} -d ${POSTGRES_DB:-hermes}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  app:
+    image: ghcr.io/hermesonehq/hermes-registry:latest
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER:-hermes}:${POSTGRES_PASSWORD:-hermes}@db:5432/${POSTGRES_DB:-hermes}
+      # RUN_MIGRATIONS: "false"   # set on extra replicas so they don't re-seed
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    restart: unless-stopped
+
+volumes:
+  pgdata:

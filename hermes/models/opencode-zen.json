@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "opencode-zen",
+  "name": "OpenCode Zen",
+  "version": "1.0.0",
+  "homepage": "https://opencode.ai/",
+  "description": "OpenCode Zen — a curated multi-vendor relay (Claude, GPT-5, and more).",
+  "docs": "https://opencode.ai/docs/zen/",
+  "apiBase": "https://opencode.ai/zen/v1",
+  "envKey": "OPENCODE_ZEN_API_KEY",
+  "models": [
+    {
+      "name": "claude-sonnet-4",
+      "label": "Claude Sonnet 4",
+      "context": 200000,
+      "maxOutput": 64000,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "reasoning",
+        "streaming"
+      ]
+    },
+    {
+      "name": "gpt-5",
+      "label": "GPT-5",
+      "context": 400000,
+      "maxOutput": 128000,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "reasoning",
+        "streaming"
+      ]
+    }
+  ]
+}

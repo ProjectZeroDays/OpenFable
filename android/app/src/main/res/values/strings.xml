@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OpenFable</string>
+    <string name="server_channel_name">OpenFable Server</string>
+    <string name="server_channel_desc">Embedded OpenFable server status</string>
+    <string name="server_running">OpenFable server running</string>
+    <string name="server_running_body">Local server on :%1$d - dashboard at /dash</string>
+</resources>

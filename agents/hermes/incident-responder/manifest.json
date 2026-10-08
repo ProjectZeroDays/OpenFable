@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1",
+  "type": "agent",
+  "id": "incident-responder",
+  "name": "Incident Responder",
+  "version": "1.0.0",
+  "description": "Triages production incidents, restores service, and runs blameless postmortems.",
+  "author": { "name": "Hermes Registry", "url": "https://github.com/" },
+  "license": "MIT",
+  "tags": ["incident", "sre", "oncall", "reliability"],
+  "compatibility": { "hermes": ">=0.3.0", "desktop": ">=0.6.0" },
+  "entry": "AGENT.md",
+  "model": "claude-opus-4-8",
+  "tools": ["Read", "Grep", "Bash"]
+}

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "kimi-coding-cn",
+  "name": "Kimi / Moonshot (China)",
+  "version": "1.0.0",
+  "homepage": "https://platform.moonshot.cn/",
+  "description": "Moonshot AI Kimi models (China endpoint), OpenAI-compatible.",
+  "docs": "https://platform.moonshot.cn/docs",
+  "apiBase": "https://api.moonshot.cn/v1",
+  "envKey": "KIMI_CN_API_KEY",
+  "models": [
+    {
+      "name": "kimi-k2-0711-preview",
+      "label": "Kimi K2",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ],
+      "description": "Mixture-of-experts model tuned for agentic tool use."
+    },
+    {
+      "name": "kimi-latest",
+      "label": "Kimi (latest)",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ]
+    },
+    {
+      "name": "moonshot-v1-128k",
+      "label": "Moonshot v1 128k",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    },
+    {
+      "name": "moonshot-v1-32k",
+      "label": "Moonshot v1 32k",
+      "context": 32768,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    },
+    {
+      "name": "kimi-thinking-preview",
+      "label": "Kimi Thinking (preview)",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "reasoning",
+        "streaming"
+      ]
+    }
+  ]
+}

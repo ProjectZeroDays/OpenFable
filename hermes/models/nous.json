@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "nous",
+  "name": "Nous Research",
+  "version": "1.0.0",
+  "homepage": "https://nousresearch.com/",
+  "description": "Nous Research Inference Portal — the Hermes model family.",
+  "docs": "https://nousresearch.com/",
+  "apiBase": "https://inference.nousresearch.com/v1",
+  "envKey": "NOUS_API_KEY",
+  "models": [
+    {
+      "name": "hermes-3-llama-3.1-405b",
+      "label": "Hermes 3 Llama 3.1 405B",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming"
+      ]
+    },
+    {
+      "name": "hermes-3-llama-3.1-70b",
+      "label": "Hermes 3 Llama 3.1 70B",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming"
+      ]
+    }
+  ]
+}

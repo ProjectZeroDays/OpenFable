@@ -1,0 +1,11 @@
+{
+  "route": "home",
+  "version": 1,
+  "autoStartOnFirstVisit": true,
+  "steps": [
+    { "targetTooltipId": "home.root.status", "title": "Know your root state", "description": "This light tells you whether root is available. Root-gated modules show their own badge when it isn't.", "gesture": "tap" },
+    { "targetTooltipId": "home.model.status", "title": "On-device model", "description": "The local model's health and download state live here. Tap to jump straight to the Machine Learning dashboard.", "gesture": "tap", "advanceOn": "ml.dashboard.opened" },
+    { "targetTooltipId": "home.provider.grid", "title": "Provider health", "description": "Green/amber/red per AI provider. Tap one to see latency; long-press to move it first in the failover chain.", "gesture": "tap" },
+    { "targetTooltipId": "home.terminal.launcher", "title": "Your console", "description": "Everything any module prints lands in the Terminal — with View, Download, and Clear controls in the header.", "gesture": "swipe" }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "xiaomi",
+  "name": "Xiaomi MiMo",
+  "version": "1.0.0",
+  "homepage": "https://xiaomimimo.com/",
+  "description": "Xiaomi MiMo — the MiMo model family, OpenAI-compatible.",
+  "docs": "https://huggingface.co/XiaomiMiMo",
+  "apiBase": "https://api.xiaomimimo.com/v1",
+  "envKey": "XIAOMI_API_KEY",
+  "models": [
+    {
+      "name": "mimo-7b-rl",
+      "label": "MiMo 7B RL",
+      "context": 32768,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming"
+      ]
+    },
+    {
+      "name": "mimo-vl-7b-rl",
+      "label": "MiMo VL 7B RL",
+      "context": 32768,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ],
+      "description": "Vision-capable MiMo variant."
+    }
+  ]
+}

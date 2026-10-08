@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "alibaba-coding-plan",
+  "name": "Alibaba Cloud (Coding Plan)",
+  "version": "1.0.0",
+  "homepage": "https://help.aliyun.com/zh/model-studio/",
+  "description": "Alibaba Cloud Coding Plan — dedicated Qwen coding tier on a separate endpoint.",
+  "docs": "https://www.alibabacloud.com/help/en/model-studio/",
+  "apiBase": "https://coding-intl.dashscope.aliyuncs.com/v1",
+  "envKey": "ALIBABA_CODING_PLAN_API_KEY",
+  "models": [
+    {
+      "name": "qwen3-coder-plus",
+      "label": "Qwen3 Coder Plus",
+      "context": 1000000,
+      "maxOutput": 65536,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ],
+      "description": "Agentic coding model."
+    },
+    {
+      "name": "qwen3-coder-flash",
+      "label": "Qwen3 Coder Flash",
+      "context": 1000000,
+      "maxOutput": 65536,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    },
+    {
+      "name": "qwen-max",
+      "label": "Qwen Max",
+      "context": 32768,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    }
+  ]
+}

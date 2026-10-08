@@ -32,6 +32,27 @@ OpenFable is a terminal-native AI coding agent that reads your code, writes patc
 
 ---
 
+## Screenshots
+
+### APK (Native Android)
+![OpenFable native APK dashboard](/docs/screenshots/android.png)
+The native `.apk` runs the `OpenFable` label build (`com.projectzerodays.quantumcli.limited`) with the C2 dashboard, kill-switch, federation controls and scan tools.
+
+### Desktop EXE
+![OpenFable desktop .exe](/docs/screenshots/desktop.png)
+Electron `.exe` (`opencode-desktop-win-x64.exe`) with the embedded server bundle — dark UI with real-time server status.
+
+### Web Version
+![OpenFable web UI served](/docs/screenshots/web.png)
+Web UI served by the embedded `serve` server at `http://localhost:4096/` using the built `packages/app` Vite bundle.
+
+### Latest Release Assets
+- `packages/desktop/dist/opencode-desktop-win-x64.exe` (112.1 MB signed installer, unsigned MZ)
+- `android/app/build/outputs/apk/full/release/app-full-release.apk` (14.6 MB, root-flavored)
+- `android/app/build/outputs/apk/limited/release/app-limited-release.apk` (14.6 MB, standard)
+
+---
+
 ## How It Works
 
 ### The Wrapping Pipeline

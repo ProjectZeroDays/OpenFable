@@ -42,3 +42,14 @@ ts-dist
 UPCOMING_CHANGELOG.md
 .vscode
 .worktrees
+# --- OpenFable workspace / release exclusions ---
+/release/
+/packages/desktop/dist/*
+/packages/desktop/dist/win-unpacked/
+/packages/desktop/dist/*.blockmap
+/android/build/
+/android/app/build/
+/android/.gradle/
+/android/local.properties
+/android/app/*.keystore
+/android/app/debug/*.jks

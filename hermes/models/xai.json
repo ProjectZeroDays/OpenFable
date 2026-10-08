@@ -1,0 +1,143 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "xai",
+  "name": "xAI",
+  "icon": "icons/xai.svg",
+  "version": "1.1.0",
+  "homepage": "https://x.ai",
+  "description": "The Grok family of models from xAI.",
+  "docs": "https://docs.x.ai/docs/models",
+  "apiBase": "https://api.x.ai/v1",
+  "envKey": "XAI_API_KEY",
+  "models": [
+    {
+      "name": "grok-4",
+      "label": "Grok 4",
+      "description": "Flagship reasoning model from xAI.",
+      "context": 256000,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "reasoning",
+        "streaming",
+        "structured_outputs"
+      ]
+    },
+    {
+      "name": "grok-3",
+      "label": "Grok 3",
+      "context": 131072,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "structured_outputs"
+      ]
+    },
+    {
+      "name": "grok-3-mini",
+      "label": "Grok 3 Mini",
+      "description": "Lightweight reasoning model.",
+      "context": 131072,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "reasoning",
+        "streaming"
+      ]
+    },
+    {
+      "name": "grok-2-vision-1212",
+      "label": "Grok 2 Vision",
+      "context": 32768,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ]
+    },
+    {
+      "name": "grok-4.3",
+      "label": "Grok 4.3",
+      "description": "Grok 4.3",
+      "context": 1000000,
+      "maxOutput": 1000000,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "prompt_caching",
+        "streaming"
+      ],
+      "pricing": {
+        "input": 1.25,
+        "output": 2.5,
+        "currency": "USD",
+        "unit": "per_1m_tokens"
+      }
+    },
+    {
+      "name": "grok-build-0.1",
+      "label": "Grok Build 0.1",
+      "description": "Grok Build 0.1",
+      "context": 262144,
+      "maxOutput": 262144,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "prompt_caching",
+        "streaming"
+      ],
+      "pricing": {
+        "input": 1.0,
+        "output": 2.0,
+        "currency": "USD",
+        "unit": "per_1m_tokens"
+      }
+    }
+  ]
+}

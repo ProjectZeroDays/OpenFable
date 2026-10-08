@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1",
+  "type": "mcp",
+  "id": "vercel",
+  "name": "Vercel",
+  "version": "1.0.0",
+  "description": "Inspect deploys, manage environment variables, and read logs on Vercel. Keep a human in the loop on anything that ships.",
+  "author": { "name": "Vercel", "url": "https://vercel.com/docs/mcp" },
+  "source": "https://vercel.com/docs/mcp",
+  "tags": ["deploy", "hosting", "vercel", "infra"],
+  "icon": "icon.svg",
+  "compatibility": { "hermes": ">=0.3.0", "desktop": ">=0.6.0" },
+  "permissions": ["network"],
+  "transport": "http",
+  "url": "https://mcp.vercel.com"
+}

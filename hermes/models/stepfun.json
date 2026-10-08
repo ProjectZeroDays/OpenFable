@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "stepfun",
+  "name": "StepFun",
+  "version": "1.0.0",
+  "homepage": "https://www.stepfun.com/",
+  "description": "StepFun (阶跃星辰) — the Step model family, OpenAI-compatible.",
+  "docs": "https://platform.stepfun.com/docs/overview/concept",
+  "apiBase": "https://api.stepfun.ai/step_plan/v1",
+  "envKey": "STEPFUN_API_KEY",
+  "models": [
+    {
+      "name": "step-2-16k",
+      "label": "Step-2 16k",
+      "context": 16384,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    },
+    {
+      "name": "step-1-128k",
+      "label": "Step-1 128k",
+      "context": 131072,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming",
+        "json_mode"
+      ]
+    },
+    {
+      "name": "step-1v-8k",
+      "label": "Step-1V 8k",
+      "context": 8192,
+      "maxOutput": 4096,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ]
+    },
+    {
+      "name": "step-2-mini",
+      "label": "Step-2 Mini",
+      "context": 8192,
+      "maxOutput": 4096,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "streaming"
+      ]
+    }
+  ]
+}

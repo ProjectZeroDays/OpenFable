@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "copilot-acp",
+  "name": "GitHub Copilot (ACP)",
+  "version": "1.0.0",
+  "homepage": "https://github.com/features/copilot",
+  "description": "GitHub Copilot via an external ACP subprocess. Model listing is handled by the subprocess.",
+  "docs": "https://docs.github.com/copilot",
+  "apiBase": "acp://copilot",
+  "models": [
+    {
+      "name": "gpt-4o",
+      "label": "GPT-4o",
+      "context": 128000,
+      "maxOutput": 16384,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ],
+      "description": "Representative model; the ACP subprocess manages the live catalog."
+    }
+  ]
+}

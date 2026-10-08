@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "copilot",
+  "name": "GitHub Copilot / Models",
+  "version": "1.0.0",
+  "homepage": "https://github.com/features/copilot",
+  "description": "GitHub Copilot / GitHub Models — multi-vendor catalog behind a GitHub token.",
+  "docs": "https://docs.github.com/en/github-models",
+  "apiBase": "https://api.githubcopilot.com",
+  "envKey": "COPILOT_GITHUB_TOKEN",
+  "models": [
+    {
+      "name": "gpt-4o",
+      "label": "GPT-4o",
+      "context": 128000,
+      "maxOutput": 16384,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ]
+    },
+    {
+      "name": "o4-mini",
+      "label": "o4-mini",
+      "context": 200000,
+      "maxOutput": 100000,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "reasoning",
+        "streaming"
+      ]
+    },
+    {
+      "name": "claude-3.5-sonnet",
+      "label": "Claude 3.5 Sonnet",
+      "context": 200000,
+      "maxOutput": 8192,
+      "modalities": {
+        "input": [
+          "text",
+          "image"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "vision",
+        "streaming"
+      ]
+    }
+  ]
+}

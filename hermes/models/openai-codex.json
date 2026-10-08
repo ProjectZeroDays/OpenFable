@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1",
+  "type": "model-provider",
+  "id": "openai-codex",
+  "name": "OpenAI Codex",
+  "version": "1.0.0",
+  "homepage": "https://openai.com/codex/",
+  "description": "OpenAI Codex via the Responses API (ChatGPT OAuth). No API key — uses the Codex sign-in.",
+  "docs": "https://platform.openai.com/docs/guides/tools",
+  "apiBase": "https://chatgpt.com/backend-api/codex",
+  "models": [
+    {
+      "name": "gpt-5-codex",
+      "label": "GPT-5 Codex",
+      "context": 400000,
+      "maxOutput": 128000,
+      "modalities": {
+        "input": [
+          "text"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "capabilities": [
+        "tools",
+        "reasoning",
+        "streaming"
+      ],
+      "description": "Agentic coding model served through the Codex Responses API."
+    }
+  ]
+}
