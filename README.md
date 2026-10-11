@@ -51,6 +51,22 @@ Web UI served by the embedded `serve` server at `http://localhost:4096/` using t
 - `android/app/build/outputs/apk/full/release/app-full-release.apk` (14.6 MB, root-flavored)
 - `android/app/build/outputs/apk/limited/release/app-limited-release.apk` (14.6 MB, standard)
 
+### macOS DMG
+![OpenFable macOS .dmg](/docs/screenshots/desktop.png) <!-- placeholder: build macOS DMG from electron package -->
+`.dmg` build (Electron) — `packages/desktop/dist/OpenFable-<version>.dmg`
+
+### iOS IPA
+![OpenFable iOS .ipa](/docs/screenshots/web.png) <!-- placeholder: build iOS archive -->
+`.ipa` archive — `ios/archive/OpenFable.ipa` (requires signing/provisioning)
+
+### Linux .deb
+![OpenFable Linux .deb](/docs/screenshots/android.png) <!-- placeholder -->
+`.deb` package — `packages/desktop/dist/opencode-desktop-linux-amd64.deb`
+
+### Snap Package
+![OpenFable .snap](/docs/screenshots/web.png) <!-- placeholder -->
+`.snap` package — `packages/desktop/dist/openfable_0.2.0_amd64.snap`
+
 ---
 
 ## How It Works

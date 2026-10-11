@@ -1,0 +1,9 @@
+name: cyber/scan
+description: Security audit and vulnerability scanning commands
+steps:
+- prompt: "Run dependency audit and basic vulnerability scan"
+- tool: cyber-cmd.scanTarget
+- condition: "if vulnerabilities found, escalate to SLDR correction loop"
+variables:
+  depth: full
+  includePorts: true

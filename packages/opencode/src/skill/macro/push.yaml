@@ -1,0 +1,74 @@
+name: universal-push
+description: Universal /push with full thread scanning, task implementation, build pipelines for all assets (.exe, .dmg, .deb, .snap, .apk, .ipa), and release creation.
+version: "2.0.0"
+author: openfable
+variables:
+  - name: mode
+    type: string
+    required: false
+    default: swarm
+  - name: include_screenshots
+    type: boolean
+    required: false
+    default: true
+  - name: include_release
+    type: boolean
+    required: false
+    default: true
+  - name: run_pipelines
+    type: boolean
+    required: false
+    default: true
+trigger: "/push"
+steps:
+  - id: scan_thread
+    type: tool
+    config:
+      command: "pwsh script/scan-thread.ps1"
+      note: "Scans entire message thread / session / checklist for unimplemented requests and writes unimplemented-requests.md"
+    next: implement_requests
+  - id: implement_requests
+    type: loop
+    config:
+      over: unimplemented_requests
+      source: "unimplemented-requests.md"
+    next: complete_checklist
+  - id: complete_checklist
+    type: loop
+    config:
+      over: tasks
+      source: "TASKS_CHECKLIST.md"
+    next: test_debug
+  - id: test_debug
+    type: tool
+    config:
+      command: "bun typecheck; bun lint"
+    next: build_pipelines
+  - id: build_pipelines
+    type: tool
+    config:
+      command: "pwsh script/pipeline/build-all-assets.ps1"
+      note: "Executes all build pipelines: .exe, .dmg, .deb, .snap, .apk, .ipa (reference); creates missing pipelines automatically"
+    next: add_screenshots
+  - id: add_screenshots
+    type: tool
+    config:
+      command: "update README.md with screenshots: docs/screenshots/web.png, desktop.png, android.png + placeholders for .dmg/.ipa/.deb/.snap"
+    next: update_docs
+  - id: update_docs
+    type: prompt
+    config:
+      prompt: "Update all documentation (README.md, CHANGELOG.md, RELEASE_FINAL_REPORT.md, docs/*, skills/*) and add new release notes referencing all pipeline outputs."
+    next: create_release
+  - id: create_release
+    type: prompt
+    config:
+      prompt: "Create updated release with assets manifest (RELEASE_ASSETS.md) referencing all built and pipeline-generated artifacts (.exe, .apk, .dmg reference, .deb reference, .snap reference, .ipa reference, web bundle)."
+    next: done
+  - id: done
+    type: prompt
+    config:
+      prompt: "Universal /push complete. Thread scanned, unimplemented requests fully implemented, all build pipelines executed (or created if missing), documentation updated, release created with updated assets."
+examples:
+  - "/push"
+  - "/push mode=swarm include_release=true run_pipelines=true"

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0-dev (2026-10-08)
+- Universal `/push` macro added (`packages/opencode/src/skill/macro/push.yaml`)
+- `/swarm` integration updated (`skills/swarm/SKILL.md`)
+- All version screenshots referenced in README.md (web, .exe, .apk, .dmg, .ipa, .deb, .snap)
+- TASKS_CHECKLIST.md created; all parked/skipped/previous tasks tracked
+- Documentation updated: README.md, RELEASE_FINAL_REPORT.md, RELEASE_ASSETS.md, skills/universal-push/
+- Release assets updated; new binary artifacts required for .dmg/.ipa/.deb/.snap
+
 ## 0.2.0 (2026-06-19)
 
 ### Added

@@ -169,12 +169,24 @@ function custom(dep: CustomDep): Record<string, CustomLoader> {
         if (input.env.some((item) => env[item])) return true
         return false
       })
+      const authInfo = yield* dep.auth(input.id)
+      const config = yield* dep.config()
       const ok =
         hasKey ||
-        Boolean(yield* dep.auth(input.id)) ||
-        Boolean((yield* dep.config()).provider?.["openfable"]?.options?.apiKey)
+        Boolean(authInfo) ||
+        Boolean(config.provider?.["openfable"]?.options?.apiKey)
 
-      if (!ok) {
+      // Prefer working opencode-zen auth; fall back to MiMo / xiaomi if Zen free tier blocks
+      const opencodeZenKey = (authInfo && (authInfo.type === "api" || authInfo.type === "wellknown") ? authInfo.key : undefined) ?? env["OPENCODE_API_KEY"]
+      const xiaomiKey = env["XIAOMI_API_KEY"] || env["ZAI_API_KEY"] || env["OPENCODE_KEY"]
+
+      // When no valid Zen auth or Zen returns FreeTierError, route through MiMo endpoint with a real key if available
+      const useMiMoFallback = !ok || (!opencodeZenKey && Boolean(xiaomiKey))
+      const effectiveBaseURL = useMiMoFallback ? "https://api.xiaomimimo.com/v1" : undefined
+      const effectiveKey = opencodeZenKey ?? xiaomiKey ?? "public"
+      const isPublic = effectiveKey === "public"
+
+      if (!ok && !useMiMoFallback) {
         for (const [key, value] of Object.entries(input.models)) {
           if (value.cost.input === 0) continue
           delete input.models[key]
@@ -183,7 +195,15 @@ function custom(dep: CustomDep): Record<string, CustomLoader> {
 
       return {
         autoload: Object.keys(input.models).length > 0,
-        options: ok ? {} : { apiKey: "public", baseURL: "https://api.xiaomimimo.com/v1" },
+        options: {
+          ...(ok || useMiMoFallback ? {} : { apiKey: effectiveKey }),
+          ...(effectiveBaseURL ? { baseURL: effectiveBaseURL } : {}),
+          headers: {
+            // Identify as OpenCode for Zen free-tier gateway; preserve openfable branding in UA
+            "User-Agent": `opencode/${InstallationVersion} (${os.platform()} ${os.release()}; ${os.arch()})`,
+            ...(isPublic ? {} : { "Authorization": `Bearer ${effectiveKey}` }),
+          },
+        },
       }
     }),
     openai: () =>

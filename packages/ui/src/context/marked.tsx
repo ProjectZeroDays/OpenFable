@@ -481,8 +481,9 @@ export const { use: useMarked, provider: MarkedProvider } = createSimpleContext(
         throwOnError: false,
         nonStandard: true,
       }),
+      // @ts-expect-error marked-shiki bundles its own marked types (version mismatch)
       markedShiki({
-        async highlight(code, lang) {
+        async highlight(code: string, lang: string) {
           const highlighter = await getSharedHighlighter({
             themes: ["OpenCode"],
             langs: [],

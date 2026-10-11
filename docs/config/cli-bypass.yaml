@@ -1,0 +1,5 @@
+bypass_confirm: true
+yes_default: true
+terminal_size: medium
+terminal_minimizable: true
+terminal_window_mode: normal

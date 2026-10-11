@@ -1,0 +1,47 @@
+name: release-goal
+description: Goal tracker for the OpenFable release cycle — verifies the release goal condition (all assets built, docs updated, release published) with binary pass/fail evidence.
+version: "1.0.0"
+author: openfable
+variables:
+  - name: condition
+    type: string
+    required: false
+    default: release-complete
+trigger: "/goal"
+steps:
+  - id: check_typecheck
+    type: tool
+    config:
+      command: "bun run typecheck"
+      note: "Full workspace typecheck must exit 0 (12/12 packages)"
+    next: check_lint
+  - id: check_lint
+    type: tool
+    config:
+      command: "bun run lint"
+      note: "oxlint must report 0 errors (warnings allowed)"
+    next: check_apk
+  - id: check_apk
+    type: tool
+    config:
+      command: "pwsh -NoProfile -Command \"Get-ChildItem android/app/build/outputs/apk -Recurse -Filter *.apk | Select-Object FullName, Length, LastWriteTime\""
+      note: "Both APK flavors (full + limited) must exist and be freshly built"
+    next: check_exe
+  - id: check_exe
+    type: tool
+    config:
+      command: "pwsh -NoProfile -Command \"Get-Item packages/desktop/dist/opencode-desktop-win-x64.exe | Select-Object Name, Length, LastWriteTime\""
+      note: "Desktop .exe must exist and embed the current server bundle"
+    next: check_docs
+  - id: check_docs
+    type: prompt
+    config:
+      prompt: "Verify README.md, CHANGELOG.md, RELEASE_ASSETS.md, RELEASE_FINAL_REPORT.md and TASKS_CHECKLIST.md all reflect the current release state with evidence lines."
+    next: verdict
+  - id: verdict
+    type: prompt
+    config:
+      prompt: "/goal verdict: PASS only if typecheck 12/12 green, lint 0 errors, both APKs present, .exe present, docs updated, and GitHub release published with all assets attached. Otherwise FAIL with the exact failing evidence and minimal repair scope."
+examples:
+  - "/goal"
+  - "/goal condition=release-complete"

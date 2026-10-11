@@ -157,3 +157,6 @@ Before closing, confirm every box that applies to the mission:
 4. Verify: code-reviewer agent over the diff + test suite run; repair loop on failures.
 5. Report: "Build fixed (BUILD SUCCESSFUL), network dashboard shipped, 39 tests passed,
    pushed as commit abc123; release APK at android/app/build/outputs/apk/…".
+
+## Universal /push Integration
+When the mission requires full task completion + documentation + release creation, activate /push (see skills/universal-push/ and packages/opencode/src/skill/macro/push.yaml). It runs /swarm, completes all tasks in TASKS_CHECKLIST.md, adds screenshots of all versions, updates docs, and creates the release.
