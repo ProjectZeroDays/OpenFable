@@ -1,22 +1,22 @@
 # TASKS_CHECKLIST.md
 
 ## Universal /push — Swarm Goal
-Status: IN PROGRESS
+Status: COMPLETE (release openfable-20261011 published 2026-10-11)
 
 - [x] /swarm — activate swarm orchestration for all tasks
-- [ ] Complete all tasks in TASKS_CHECKLIST.md (this file)
+- [x] Complete all tasks in TASKS_CHECKLIST.md (this file)
 - [x] Complete all parked tasks (skill/task layer)
-- [ ] Complete all skipped tasks (verification / edit loop)
-- [ ] Complete all previously requested incomplete tasks from earlier chat
+- [x] Complete all skipped tasks (verification / edit loop)
+- [x] Complete all previously requested incomplete tasks from earlier chat
 - [x] Test and debug build / typecheck / lint
 - [x] Add screenshots of all versions to README.md (web, .exe, .apk, .dmg, .ipa, .deb, .snap)
-- [ ] Update all documentation (README, CHANGELOG, RELEASE_FINAL_REPORT, docs/)
-- [ ] Create new updated release with updated assets
+- [x] Update all documentation (README, CHANGELOG, RELEASE_FINAL_REPORT, docs/)
+- [x] Create new updated release with updated assets
 
 ## Parked / Skipped / Previous Incomplete (from session context)
 - [x] Macro /push command definition (skills/macro + command template)
 - [x] README screenshot sections for all platform artifacts
-- [ ] Release asset manifest update
+- [x] Release asset manifest update
 
 ## Verification (2026-10-11 session)
 - [x] bun typecheck passes (12/12 packages, 2026-10-11)

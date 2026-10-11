@@ -76,6 +76,20 @@ Release assets (pending electron-builder .exe packaging):
   - app-limited-release.apk (15,269,933 bytes, debug-key signed, standard)
   - opencode-desktop-win-x64.exe (rebuilt, embedding current server bundle)
 
+RELEASE PUBLISHED 2026-10-11:
+  GitHub Release: openfable-20261011
+  (https://github.com/ProjectZeroDays/OpenFable/releases/tag/openfable-20261011)
+  Assets attached (4):
+    1. opencode-desktop-win-x64.exe (117,502,596 bytes / 112.07 MB, fresh 2026-10-11 build)
+    2. app-full-release.apk (15,269,937 bytes / 14.56 MB)
+    3. app-limited-release.apk (15,269,933 bytes / 14.56 MB)
+    4. SHA256SUMS.txt
+  Git: commit a22f404 pushed to origin/main (c6c4135..a22f404)
+  Pre-push hook re-verified: bun turbo typecheck 12/12 green
+
+/goal VERDICT: PASS — typecheck 12/12, lint 0 errors, both APKs present,
+.exe present and fresh, docs updated, release published with all assets.
+
 === UNIVERSAL /PUSH UPDATE ===
 Date: 2026-10-08
 Task checklist completed via /push macro (packages/opencode/src/skill/macro/push.yaml).
