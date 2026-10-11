@@ -1,0 +1,43 @@
+---
+name: compose:azure-cost
+hidden: true
+description: azure-cost
+source_platform: openclaw
+---
+
+# Azure Cost Management Skill
+
+Query historical costs, forecast future spending, optimize to reduce waste.
+
+## Routing
+
+| User Intent | Workflow |
+|-------------|----------|
+| Understand current costs | [Cost Query](cost-query/workflow.md) |
+| Reduce costs / find waste | [Cost Optimization](cost-optimization/workflow.md) |
+| Project future costs | [Cost Forecast](cost-forecast/workflow.md) |
+
+## Quick Reference
+
+| Property | Value |
+|----------|-------|
+| **Query API** | `POST {scope}/providers/Microsoft.CostManagement/query?api-version=2023-11-01` |
+| **Forecast API** | `POST {scope}/providers/Microsoft.CostManagement/forecast?api-version=2023-11-01` |
+| **Required Role** | Cost Management Reader + Monitoring Reader + Reader (on target scope) |
+
+## Scope Patterns
+
+- Subscription: `/subscriptions/<id>`
+- Resource Group: `/subscriptions/<id>/resourceGroups/<name>`
+- Management Group: `/providers/Microsoft.Management/managementGroups/<id>`
+- Billing Account: `/providers/Microsoft.Billing/billingAccounts/<id>`
+
+## Service-Specific Optimization
+
+- [Redis](cost-optimization/services/redis/azure-cache-for-redis.md)
+- [Storage](cost-optimization/services/storage/azure-storage.md)
+
+## References
+
+- [MCP Tools, Best Practices, Safety](references/tools-and-best-practices.md)
+- [SDK: Redis .NET](cost-optimization/sdk/azure-resource-manager-redis-dotnet.md)

@@ -1,0 +1,7 @@
+INTEGRATED_FROM
+==============
+Source: C:\Users\Project Zero\.openclaw\plugin-skills
+Date (UTC): 2026-10-11
+Scope: skill dirs missing from skills/, packages/opencode/src/skill/{zcode,quantum-cli,ruflo,toolkit,openclaw}/,
+copied verbatim into packages/opencode/src/skill/openclaw/<skill-name>/.
+Exclusions applied: vscode_* dirs (top-level and nested), node_modules, __pycache__, .git, *.ts files.

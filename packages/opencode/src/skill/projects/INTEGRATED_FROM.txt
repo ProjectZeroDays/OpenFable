@@ -1,0 +1,22 @@
+Projects sweep integration log (date: 2026-10-11)
+
+SKILLS
+- src/skill/projects/omniroute/ (46 skill dirs, SKILL.md only, ~225KB)
+  source: C:\Projects\OmniRoute\skills\*
+  all 46 names verified novel vs C:\Projects\OpenFable\skills\ and packages/opencode/src/skill/**
+- src/skill/projects/ruflo/ (133 skill dirs, SKILL.md only, ~1.4MB)
+  source: C:\Projects\Ruflo\.agents\skills\*
+  excluded 2 dup names already present: github-code-review, security-audit
+
+AGENTS
+- src/agent/projects/quantumcli/ (10 .py agents + __init__.py + requirements.txt)
+  source: C:\Projects\QuantumCLI\agents\*.py
+  note: byte-identical copies exist at C:\Projects\Quantum CLI\agents\quantumcli-desktop\*.py (deduped, copied once)
+- src/agent/projects/unified-stack/ (16 .py modules + 5 .sh entry scripts + INTEGRATION.md)
+  source: C:\Projects\unified-ai-stack\agents\*
+  excluded 0-byte stubs: memory_store.py, sandbox.py
+
+COMMANDS (src/command/projects-cmd/)
+- spy-push.md — source: C:\Projects\SpyDroid\.opencode\commands\push.md
+  note: C:\Projects\SpyTV\.opencode\commands\push.md is byte-identical (sha256 7DAE7AA6…F79707), deduped
+- quantum-swarm.md — source: C:\Projects\Quantum CLI\.opencode\command\swarm.md
